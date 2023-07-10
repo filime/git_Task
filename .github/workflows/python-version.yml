@@ -22,10 +22,10 @@ jobs:
 
       - name: Run Python script
         run: |
-          python -c "import sys; print(sys.version)"
+          python -c "import sys; print(sys.version)" > /var/tsave/output.txt
 
       - name: Save output as artifact
         uses: actions/upload-artifact@v2
         with:
           name: Python ${{ matrix.python-version }} Output
-          path: output.txt
+          path: /var/tsave/output.txt
