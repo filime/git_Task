@@ -22,7 +22,7 @@ jobs:
 
       - name: Run Python script
         run: |
-          python my_script.py > output.txt
+          python -c "import sys; print(sys.version)"
 
       - name: Save output as artifact
         uses: actions/upload-artifact@v2
