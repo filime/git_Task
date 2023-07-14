@@ -6,9 +6,7 @@
 uint32_t read_32bit_number(FILE* file) {
     uint32_t number;
     fread(&number, sizeof(number), 1, file);
-    // 네트워크 바이트 순서로 저장된 경우,빅 엔디안으로 변환
-    number = ntohl(number);
-    return number;
+    return ntohl(number);
 }
 
 int main() {
